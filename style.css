@@ -1,0 +1,222 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* border and padding will be included in the
+    total width and height of the element */
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* remove all bullet points out of lists */
+    list-style: none;
+    /* remove all underlines from links */
+    text-decoration: none;
+}
+
+header {
+    /* this element is removed from the normal
+    document flow, and no space is created for the
+    element in the page layout */
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* top&bottom: 33px
+    left & right is 9% */
+    padding: 33px 9%;
+    /* it will inherit it's immediate parent
+    background */
+    background: transparent;
+}
+
+.logo {
+    font-size: 30px;
+    /* it will be very bold */
+    font-weight: 700;
+    color: white;
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist a {
+    color: white;
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    /* all transitions should take
+    0.55s to complete */
+    transition: all 0.55s ease;
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid white;
+}
+
+#menu-icon {
+    color: white;
+    font-size: 35px;
+    z-index: 10001;
+    cursor: pointer;
+    /* display will be none initially
+    it will be triggered programmatically */
+    display: none;
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    /* 100% view height
+    it will cover the full screen height */
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #4d9559 0%, #38703d 28.53%, #133917 75.52%);
+    /* positioned relative to its normal
+    position in the document */
+    position: relative;
+    /* atleast for a change
+    we don't always need flexbox */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* so we can also use align-items
+    with grid, wonders shall never end */
+    align-items: center;
+    /* gap between the two grid columns */
+    gap: 2rem;
+}
+
+section {
+    /* top and bottom = 0
+    left and right is 19% */
+    padding: 0 19%;
+}
+
+.hero-text h5 {
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.hero-text h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 90px;
+    line-height: 1;
+    color: white;
+    margin: 0 0 45px;
+}
+
+.hero-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    color: white;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 40px;
+}
+
+.hero-img img {
+    width: 500px;
+    height: auto;
+}
+
+.hero-text a {
+    display: inline-block;
+    color: white;
+    background: #4d9559;
+    border: 1px solid transparent;
+    padding: 12px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    /* instead of applying all styles at
+    an instant, show a smooth transition */
+    transition: all 0.55s ease;
+}
+
+.hero-text a:hover {
+    background: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+
+.hero-text a.ctaa {
+    background: transparent;
+    border: 1px solid white;
+    margin-left: 20px;
+}
+
+.hero-text a.ctaa i {
+    /* align the icon to its
+    middle */
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.icons {
+    /* positioned relative to the nearest
+    positioned parent element.
+    I think that's the hero section */
+    position: absolute;
+    top: 50%;
+    padding: 0 9%;
+    transform: translateY(-50%);
+}
+
+.icons i {
+    /* display each icon on a new line */
+    display: block;
+    margin: 26px 0;
+    font-size: 24px;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.icons i:hover {
+    color: #4d9559;
+    transform: translateY(-5px);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 6%;
+    right: 9%;
+}
+
+.scroll-down i {
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    color: white;
+    background: #4d9559;
+    border-radius: 30px;
+    transition: all 0.5s ease;
+}
+
+.scroll-down i:hover {
+    transform: translateY(-5px);
+}
+
+
+/* media queries */
+
+@media (max-width: 1535px) {
+    header {
+        padding: 15px 3%;
+        transition: 0.2s;
+    }
+    .icons {
+        padding: 0 3%;
+        transition: 0.2s;
+    }
+}
